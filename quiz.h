@@ -5,7 +5,6 @@
 #include<unistd.h>
 
 
-#define MAX_POINT 100
 char *readall(int fd);
 char *fetch(char *url);
 char *getQuestion(char *json);
