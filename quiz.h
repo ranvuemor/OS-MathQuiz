@@ -10,4 +10,4 @@ char *readall(int fd);
 char *fetch(char *url);
 char *getQuestion(char *json);
 int getAnswer(char *json);
-int play(unsigned n, unsigned score, char *text, int answer);
+int play(int n, int score, char *text, int answer);

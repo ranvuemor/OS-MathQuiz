@@ -1,12 +1,13 @@
 #include "quiz.h"
 
 
-int play(unsigned n, unsigned score, char *text, int answer) {
+int play(int n, int score, char *text, int answer) {
     int try = 0;
     int addscore = 8;
     int ans;
+    int check = 0;
     printf("Q%d: What is %s?\n", n, text);
-    while (addscore != 1) {
+    while (addscore != 1  && check == 0) {
         printf("%d pt> ", addscore);
 	if (scanf("%d", &ans) == EOF){
 		printf("Exiting...\n");
@@ -26,6 +27,7 @@ int play(unsigned n, unsigned score, char *text, int answer) {
 	else {
 		score += addscore;
 		printf("Congratulations, your answer %d is correct.\n", ans);
+		check = 1;
 		try = -1;
 		break;
 
@@ -55,9 +57,6 @@ int play(unsigned n, unsigned score, char *text, int answer) {
 		
 	    }
     } 
-    else if (try == 4) {
-        printf("The correct answer was %d,\n", answer);
-    }
-    printf("Your total score is %d/%d points.\n\n", score, (n * 8));
+    
     return score;
 }
